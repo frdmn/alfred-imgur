@@ -5,10 +5,10 @@ Alfred workflow to upload image files from your Finder to [Imgur](https://imgur.
 ## Installation
 
 1. Make sure you've installed all requirements
-2. Download the latest release:
+2. Download the latest release:  
   <http://www.packal.org/workflow/imgur-uploader>
 3. [Create API keys on Imgur](http://api.imgur.com/oauth2/addclient)
-4. Add your client ID in `~/.alfred-imgur.conf`:
+4. Add your client ID in `~/.alfred-imgur.conf`:  
   `echo "{{KEY}}" > ~/.alfred-imgur.conf`
 
 ## Usage
