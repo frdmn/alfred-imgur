@@ -8,13 +8,17 @@ Alfred workflow to upload image files from your Finder to [Imgur](https://imgur.
 2. Download the latest release:  
   <http://www.packal.org/workflow/imgur-uploader>
 3. [Create API keys on Imgur](http://api.imgur.com/oauth2/addclient)
+ 1. Set *Authorization type* to `Anonymous usage without user authorization`
+ 2. Set *Authorization callback URL* to any valid URL you want (because we don't need that callback but Imgur wants you to set one), for example: `https://imgur.com`
 4. Add your client ID in `~/.alfred-imgur.conf`:  
   `echo "{{KEY}}" > ~/.alfred-imgur.conf`
 
 ## Usage
 
 * Select a image file in your Finder
-* Hit the shortcut (<kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>⌥</kbd> + <kbd>I</kbd>) to upload the file
+* Upload using ...
+ * ... the shortcut (<kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>⌥</kbd> + <kbd>I</kbd>) to upload the file
+ * `imgur` keyword
 
 ## Contributing
 
@@ -30,7 +34,7 @@ Alfred workflow to upload image files from your Finder to [Imgur](https://imgur.
 
 ## Version
 
-1.0.0
+1.1.0
 
 ## License
 
