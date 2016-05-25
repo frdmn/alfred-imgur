@@ -15,6 +15,31 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>55F56D42-4BD9-4121-9248-EFE802DD2735</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A0EC1C43-726F-4869-A7C4-1F8C9A603BC5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>31427260-C3B6-458B-97FA-B0502A48155C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>DE29432D-5DE2-49DE-A62C-41023AB386EA</key>
@@ -26,6 +51,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
@@ -34,6 +61,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 	</dict>
@@ -47,6 +76,27 @@
 	<string>Imgur Uploader</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Uploading {query}...</string>
+				<key>title</key>
+				<string>Imgur Uploader</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A0EC1C43-726F-4869-A7C4-1F8C9A603BC5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -72,32 +122,51 @@
 			<key>uid</key>
 			<string>DE29432D-5DE2-49DE-A62C-41023AB386EA</string>
 			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>imgur</string>
+				<key>subtext</key>
+				<string>Upload to Imgur</string>
+				<key>text</key>
+				<string>Imgur Uploader</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>55F56D42-4BD9-4121-9248-EFE802DD2735</string>
+			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
+				<key>concurrently</key>
 				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
+				<key>escaping</key>
 				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>Uploading {query}...</string>
-				<key>title</key>
-				<string>Imgur Uploader</string>
+				<key>script</key>
+				<string>on run	-- Function to check if JSON Helper is installed	set jsonHelperExists to false	try		do shell script "osascript -e 'exists application \"JSON Helper\"'"		set jsonHelperExists to true	end try		-- Abort if not installed	if jsonHelperExists is false then		return "Couldn't find JSON Helper. Install via http://www.appstore.com/mac/jsonhelperforapplescript"	end if		-- Check if API key file exists	try		do shell script "/bin/ls ~/.alfred-imgur.conf"	on error errMsg number errNum		return "Couldn't find Imgur API key (~/.alfred-imgur.conf)."	end try		-- Find selected file	tell application "Finder"		set someSource to selection as alias list		if someSource = {} then			return "Select a file in Finder first"		end if		set theFile to item 1 of someSource as alias		set theFileInfo to info for theFile		set theName to name of theFileInfo		set theExt to name extension of theFileInfo	end tell		-- List of allowed file types	set ImgTypes to {"JPEG", "JPG", "PNG", "GIF", "APNG", "TIFF", "BMP", "PDF", "XCF"}		-- Abort if not listed	if theExt is not in ImgTypes then		return "A file with an extention " &amp; theExt &amp; " can't be uploaded"	end if		-- Call upload function and return the link	set sUpload to imgur(theFile, false)	set the clipboard to sUpload	return sUploadend run-- Imgur upload function using OAuth (API v3)on imgur(_Image, _isOpen)	set sImg to (POSIX path of _Image)	set apikey to do shell script "/bin/cat ~/.alfred-imgur.conf"		set curlCommand to "curl -H \"Authorization: Client-ID " &amp; apikey &amp; "\" -F \"image=@" &amp; sImg &amp; "\" https://api.imgur.com/3/upload"	set answer to do shell script curlCommand		tell application "JSON Helper"		set jsonAPI to read JSON from answer		set link to link of |data| of jsonAPI	end tell		if _isOpen = true then		tell application "Finder" to open location link	end if	return linkend imgur</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>A0EC1C43-726F-4869-A7C4-1F8C9A603BC5</string>
+			<string>31427260-C3B6-458B-97FA-B0502A48155C</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -106,11 +175,7 @@
 				<false/>
 				<key>onlyshowifquerypopulated</key>
 				<false/>
-				<key>output</key>
-				<integer>0</integer>
 				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
 				<false/>
 				<key>text</key>
 				<string>{query}</string>
@@ -122,26 +187,7 @@
 			<key>uid</key>
 			<string>B67D6A45-DD4C-498E-9FF6-6330A4FC548F</string>
 			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>on run	-- Function to check if JSON Helper is installed	set jsonHelperExists to false	try		do shell script "osascript -e 'exists application \"JSON Helper\"'"		set jsonHelperExists to true	end try		-- Abort if not installed	if jsonHelperExists is false then		return "Couldn't find JSON Helper. Install via http://www.appstore.com/mac/jsonhelperforapplescript"	end if		-- Check if API key file exists	try		do shell script "/bin/ls ~/.alfred-imgur.conf"	on error errMsg number errNum		return "Couldn't find Imgur API key (~/.alfred-imgur.conf)."	end try		-- Find selected file	tell application "Finder"		set someSource to selection as alias list		if someSource = {} then			return "Select a file in Finder first"		end if		set theFile to item 1 of someSource as alias		set theFileInfo to info for theFile		set theName to name of theFileInfo		set theExt to name extension of theFileInfo	end tell		-- List of allowed file types	set ImgTypes to {"JPEG", "JPG", "PNG", "GIF", "APNG", "TIFF", "BMP", "PDF", "XCF"}		-- Abort if not listed	if theExt is not in ImgTypes then		return "A file with an extention " &amp; theExt &amp; " can't be uploaded"	end if		-- Call upload function and return the link	set sUpload to imgur(theFile, false)	set the clipboard to sUpload	return sUploadend run-- Imgur upload function using OAuth (API v3)on imgur(_Image, _isOpen)	set sImg to (POSIX path of _Image)	set apikey to do shell script "/bin/cat ~/.alfred-imgur.conf"		set curlCommand to "curl -H \"Authorization: Client-ID " &amp; apikey &amp; "\" -F \"image=@" &amp; sImg &amp; "\" https://api.imgur.com/3/upload"	set answer to do shell script curlCommand		tell application "JSON Helper"		set jsonAPI to read JSON from answer		set link to link of |data| of jsonAPI	end tell		if _isOpen = true then		tell application "Finder" to open location link	end if	return linkend imgur</string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>31427260-C3B6-458B-97FA-B0502A48155C</string>
-			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -156,23 +202,38 @@ http://imgur.com</string>
 	<dict>
 		<key>31427260-C3B6-458B-97FA-B0502A48155C</key>
 		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
 			<key>ypos</key>
-			<real>180</real>
+			<integer>230</integer>
+		</dict>
+		<key>55F56D42-4BD9-4121-9248-EFE802DD2735</key>
+		<dict>
+			<key>xpos</key>
+			<integer>120</integer>
+			<key>ypos</key>
+			<integer>210</integer>
 		</dict>
 		<key>A0EC1C43-726F-4869-A7C4-1F8C9A603BC5</key>
 		<dict>
+			<key>xpos</key>
+			<integer>700</integer>
 			<key>ypos</key>
-			<real>70</real>
+			<integer>10</integer>
 		</dict>
 		<key>B67D6A45-DD4C-498E-9FF6-6330A4FC548F</key>
 		<dict>
+			<key>xpos</key>
+			<integer>700</integer>
 			<key>ypos</key>
-			<real>170</real>
+			<integer>260</integer>
 		</dict>
 		<key>DE29432D-5DE2-49DE-A62C-41023AB386EA</key>
 		<dict>
+			<key>xpos</key>
+			<integer>130</integer>
 			<key>ypos</key>
-			<real>70</real>
+			<integer>70</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
