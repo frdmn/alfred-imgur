@@ -191,13 +191,7 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Code snippet:
-
-https://gist.github.com/imkmf/3445912
-
-imgur:
-
-http://imgur.com</string>
+	<string></string>
 	<key>uidata</key>
 	<dict>
 		<key>31427260-C3B6-458B-97FA-B0502A48155C</key>
@@ -236,6 +230,8 @@ http://imgur.com</string>
 			<integer>70</integer>
 		</dict>
 	</dict>
+	<key>version</key>
+	<string>1.1.0</string>
 	<key>webaddress</key>
 	<string>https://frd.mn</string>
 </dict>
