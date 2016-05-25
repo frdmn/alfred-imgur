@@ -16,9 +16,9 @@ Alfred workflow to upload image files from your Finder to [Imgur](https://imgur.
 ## Usage
 
 * Select a image file in your Finder
-* Upload using ...
- * ... the shortcut (<kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>⌥</kbd> + <kbd>I</kbd>) to upload the file
- * `imgur` keyword
+* Upload using
+ * the shortcut <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>⌥</kbd> + <kbd>I</kbd>
+ * the `imgur` Alfred keyword
 
 ## Contributing
 
