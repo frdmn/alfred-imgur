@@ -1,24 +1,30 @@
 # alfred-imgur
 
-Alfred workflow to upload image files from your Finder to [Imgur](https://imgur.com).
+Alfred workflow to upload image files from Finder or a Screen Capture to [Imgur](https://imgur.com).
 
 ## Installation
 
-1. Make sure you've installed all requirements
-2. Download the latest release:  
-  <http://www.packal.org/workflow/imgur-uploader>
-3. [Create API keys on Imgur](http://api.imgur.com/oauth2/addclient)
- 1. Set *Authorization type* to `Anonymous usage without user authorization`
- 2. Set *Authorization callback URL* to any valid URL you want (because we don't need that callback but Imgur wants you to set one), for example: `https://imgur.com`
-4. Add your client ID in `~/.alfred-imgur.conf`:  
+* Make sure you've installed all requirements
+* [Click here to download the latest release](http://www.packal.org/workflow/imgur-uploader)
+* [Create API keys on Imgur](https://api.imgur.com/oauth2/addclient)
+  * Set *Authorization type* to `Anonymous usage without user authorization`
+* Add your client ID in `~/.alfred-imgur.conf`:  
   `echo "{{KEY}}" > ~/.alfred-imgur.conf`
 
 ## Usage
 
-* Select a image file in your Finder
-* Upload using
- * the shortcut <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>⌥</kbd> + <kbd>I</kbd>
- * the `imgur` Alfred keyword
+Both Finder and Screen Capture methods allow you to do define your own _Hotkey_ for executing thet workflow.
+
+i.e. <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>⌥</kbd> + <kbd>I</kbd>
+
+### Finder
+
+* Select an image file in your Finder
+* Upload using the `imgur finder` Alfred keyword
+
+### Screen Capture
+
+* Start screen capture using the `imgur screenshot` Alfred keyword
 
 ## Contributing
 
@@ -30,13 +36,12 @@ Alfred workflow to upload image files from your Finder to [Imgur](https://imgur.
 
 ## Requirements / Dependencies
 
-* [JSON Helper](http://www.appstore.com/mac/jsonhelperforapplescript)
+* [JSON Helper](https://apps.apple.com/app/json-helper-for-applescript/id453114608)
 
 ## Version
 
-1.1.0
+2.0.0
 
 ## License
 
 [MIT](LICENSE)
-
