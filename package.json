@@ -1,6 +1,6 @@
 {
   "name": "alfred-imgur",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Upload the currently selected file in your Finder to Imgur",
   "license": "MIT",
   "repository": "frdmn/alfred-imgur",
