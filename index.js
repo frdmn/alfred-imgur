@@ -14,11 +14,9 @@ if (alfy.input === 'errorNoSelection') {
 	console.log('Error: folder detected - please select a file');
 } else {
 	imgur.setClientId(process.env.APIKEY);
-	imgur.uploadFile(alfy.input)
-    .then(function (json) {
-        console.log(json.data.link);
-	})
-	.catch(function (err) {
-        console.error(err.message);
-    });
+	imgur.uploadFile(alfy.input).then(function (json) {
+		console.log(json.data.link);
+	}).catch(function (err) {
+		console.error(err.message);
+	});
 }
