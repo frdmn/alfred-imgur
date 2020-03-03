@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 const imgur = require('imgur');
 const clipboardy = require('clipboardy');
 
-// Load config from ~/.alfred.ldap
+// Load config from ~/.alfred-imgur
 dotenv.config({path: path.join(os.homedir(), '.alfred-imgur.conf')});
 
 // Check for errors

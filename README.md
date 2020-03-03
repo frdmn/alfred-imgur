@@ -4,21 +4,26 @@ Alfred workflow to upload image files from your Finder to [Imgur](https://imgur.
 
 ## Installation
 
-1. Make sure you've installed all requirements
-2. Download the latest release:  
-  <http://www.packal.org/workflow/imgur-uploader>
-3. [Create API keys on Imgur](http://api.imgur.com/oauth2/addclient)
- 1. Set *Authorization type* to `Anonymous usage without user authorization`
- 2. Set *Authorization callback URL* to any valid URL you want (because we don't need that callback but Imgur wants you to set one), for example: `https://imgur.com`
-4. Add your client ID in `~/.alfred-imgur.conf`:  
-  `echo "{{KEY}}" > ~/.alfred-imgur.conf`
+1. Make sure you've met all requirements
+2. Install the workflow with `npm`:
+
+    ```shell
+    npm install -g alfred-imgur
+    ```
+
+3. Copy and adjust the default configuration file and make sure your API key is set:
+
+    ```shell
+    cp ~/Library/Application\ Support/Alfred\ 3/Alfred.alfredpreferences/workflows/alfred-ldap/.alfred-imgur.conf ~/.alfred-imgur.conf
+    vi ~/.alfred-ldap.conf
+    ```
 
 ## Usage
 
 * Select a image file in your Finder
 * Upload using
- * the shortcut <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>⌥</kbd> + <kbd>I</kbd>
- * the `imgur` Alfred keyword
+    * the shortcut <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>⌥</kbd> + <kbd>I</kbd>
+    * the `imgur` Alfred keyword
 
 ## Contributing
 
@@ -30,13 +35,13 @@ Alfred workflow to upload image files from your Finder to [Imgur](https://imgur.
 
 ## Requirements / Dependencies
 
-* [JSON Helper](http://www.appstore.com/mac/jsonhelperforapplescript)
+* Node / NPM
+* Imgur [API keys](http://api.imgur.com/oauth2/addclient)
 
 ## Version
 
-1.1.0
+1.2.0
 
 ## License
 
 [MIT](LICENSE)
-
