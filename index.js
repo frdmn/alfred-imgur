@@ -14,6 +14,7 @@ if (alfy.input === 'errorNoSelection') {
 	console.log(`Error: no file selected`);
 } else if (alfy.input === 'errorFolder') {
 	console.log(`Error: folder detected - please select a file`);
+// eslint-disable-next-line no-negated-condition
 } else if (!path.extname(alfy.input).match(/(jpg|png|gif|tiff)/)) {
 	console.log(`Error: no valid image file extension detected`);
 } else {
