@@ -11,9 +11,11 @@ dotenv.config({path: path.join(os.homedir(), '.alfred-imgur.conf')});
 
 // Check for errors
 if (alfy.input === 'errorNoSelection') {
-	console.log('Error: no file selected');
+	console.log(`Error: no file selected`);
 } else if (alfy.input === 'errorFolder') {
-	console.log('Error: folder detected - please select a file');
+	console.log(`Error: folder detected - please select a file`);
+} else if (!path.extname(alfy.input).match(/(jpg|png|gif|tiff)/)) {
+	console.log(`Error: no valid image file extension detected`);
 } else {
 	// Set client id
 	imgur.setClientId(process.env.APIKEY);
@@ -23,6 +25,6 @@ if (alfy.input === 'errorNoSelection') {
 		clipboardy.writeSync(json.data.link);
 		console.log(json.data.link);
 	}).catch(function (err) {
-		console.error('Error: ' + err.message);
+		console.error(`Error: ${err.message}`);
 	});
 }
