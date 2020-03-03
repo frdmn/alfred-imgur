@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>mn.frd.alfred-imgur</string>
+	<string>mn.frd.alfrd-imgur</string>
 	<key>connections</key>
 	<dict>
-		<key>31427260-C3B6-458B-97FA-B0502A48155C</key>
+		<key>194CBE47-61F7-4142-A1F9-19FAFE1FB513</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B67D6A45-DD4C-498E-9FF6-6330A4FC548F</string>
+				<string>5F37DEF5-C874-457F-9E17-64E6EDA8732C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -19,21 +19,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>55F56D42-4BD9-4121-9248-EFE802DD2735</key>
+		<key>5F37DEF5-C874-457F-9E17-64E6EDA8732C</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>A0EC1C43-726F-4869-A7C4-1F8C9A603BC5</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>31427260-C3B6-458B-97FA-B0502A48155C</string>
+				<string>BC02C346-0966-4391-AEF6-D8530291EA60</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -42,11 +32,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>DE29432D-5DE2-49DE-A62C-41023AB386EA</key>
+		<key>BC02C346-0966-4391-AEF6-D8530291EA60</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>A0EC1C43-726F-4869-A7C4-1F8C9A603BC5</string>
+				<string>F3DA6D14-4D3E-4E9E-9EDD-E57B2CB10F87</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -54,9 +44,12 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+		</array>
+		<key>F3DA6D14-4D3E-4E9E-9EDD-E57B2CB10F87</key>
+		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>31427260-C3B6-458B-97FA-B0502A48155C</string>
+				<string>BBDA7D5D-1594-48A2-AC4C-4766E5ABF162</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -69,7 +62,7 @@
 	<key>createdby</key>
 	<string>Jonas Friedmann</string>
 	<key>description</key>
-	<string>Upload a selected file in your Finder to Imgur</string>
+	<string>Upload the currently selected file in your Finder to Imgur</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -79,60 +72,12 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Uploading {query}...</string>
-				<key>title</key>
-				<string>Imgur Uploader</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>A0EC1C43-726F-4869-A7C4-1F8C9A603BC5</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>hotkey</key>
-				<integer>34</integer>
-				<key>hotmod</key>
-				<integer>1835008</integer>
-				<key>hotstring</key>
-				<string>I</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>DE29432D-5DE2-49DE-A62C-41023AB386EA</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
 				<string>imgur</string>
 				<key>subtext</key>
-				<string>Upload to Imgur</string>
+				<string></string>
 				<key>text</key>
 				<string>Imgur Uploader</string>
 				<key>withspace</key>
@@ -141,7 +86,7 @@
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>55F56D42-4BD9-4121-9248-EFE802DD2735</string>
+			<string>194CBE47-61F7-4142-A1F9-19FAFE1FB513</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -151,11 +96,25 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>0</integer>
+				<integer>102</integer>
 				<key>script</key>
-				<string>on run	-- Function to check if JSON Helper is installed	set jsonHelperExists to false	try		do shell script "osascript -e 'exists application \"JSON Helper\"'"		set jsonHelperExists to true	end try		-- Abort if not installed	if jsonHelperExists is false then		return "Couldn't find JSON Helper. Install via http://www.appstore.com/mac/jsonhelperforapplescript"	end if		-- Check if API key file exists	try		do shell script "/bin/ls ~/.alfred-imgur.conf"	on error errMsg number errNum		return "Couldn't find Imgur API key (~/.alfred-imgur.conf)."	end try		-- Find selected file	tell application "Finder"		set someSource to selection as alias list		if someSource = {} then			return "Select a file in Finder first"		end if		set theFile to item 1 of someSource as alias		set theFileInfo to info for theFile		set theName to name of theFileInfo		set theExt to name extension of theFileInfo	end tell		-- List of allowed file types	set ImgTypes to {"JPEG", "JPG", "PNG", "GIF", "APNG", "TIFF", "BMP", "PDF", "XCF"}		-- Abort if not listed	if theExt is not in ImgTypes then		return "A file with an extention " &amp; theExt &amp; " can't be uploaded"	end if		-- Call upload function and return the link	set sUpload to imgur(theFile, false)	set the clipboard to sUpload	return sUploadend run-- Imgur upload function using OAuth (API v3)on imgur(_Image, _isOpen)	set sImg to (POSIX path of _Image)	set apikey to do shell script "/bin/cat ~/.alfred-imgur.conf"		set curlCommand to "curl -H \"Authorization: Client-ID " &amp; apikey &amp; "\" -F \"image=@" &amp; sImg &amp; "\" https://api.imgur.com/3/upload"	set answer to do shell script curlCommand		tell application "JSON Helper"		set jsonAPI to read JSON from answer		set link to link of |data| of jsonAPI	end tell		if _isOpen = true then		tell application "Finder" to open location link	end if	return linkend imgur</string>
+				<string>tell application "Finder"
+	set someSource to selection as alias list
+	if someSource = {} then
+		return "errorNoSelection"
+	end if
+	set theFile to item 1 of someSource as alias
+    set thePath to (POSIX path of theFile)
+	set theFileInfo to info for theFile
+end tell
+
+if folder of theFileInfo then
+	return "errorFolder"
+end if
+
+thePath</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
@@ -164,7 +123,43 @@
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>31427260-C3B6-458B-97FA-B0502A48155C</string>
+			<string>5F37DEF5-C874-457F-9E17-64E6EDA8732C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.transform</string>
+			<key>uid</key>
+			<string>BC02C346-0966-4391-AEF6-D8530291EA60</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node index.js "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F3DA6D14-4D3E-4E9E-9EDD-E57B2CB10F87</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -185,7 +180,7 @@
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>B67D6A45-DD4C-498E-9FF6-6330A4FC548F</string>
+			<string>BBDA7D5D-1594-48A2-AC4C-4766E5ABF162</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -194,45 +189,45 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>31427260-C3B6-458B-97FA-B0502A48155C</key>
+		<key>194CBE47-61F7-4142-A1F9-19FAFE1FB513</key>
 		<dict>
 			<key>xpos</key>
-			<integer>500</integer>
-			<key>ypos</key>
-			<integer>230</integer>
-		</dict>
-		<key>55F56D42-4BD9-4121-9248-EFE802DD2735</key>
-		<dict>
-			<key>xpos</key>
-			<integer>120</integer>
-			<key>ypos</key>
 			<integer>210</integer>
+			<key>ypos</key>
+			<integer>150</integer>
 		</dict>
-		<key>A0EC1C43-726F-4869-A7C4-1F8C9A603BC5</key>
+		<key>5F37DEF5-C874-457F-9E17-64E6EDA8732C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>700</integer>
+			<integer>430</integer>
 			<key>ypos</key>
-			<integer>10</integer>
+			<integer>195</integer>
 		</dict>
-		<key>B67D6A45-DD4C-498E-9FF6-6330A4FC548F</key>
+		<key>BBDA7D5D-1594-48A2-AC4C-4766E5ABF162</key>
 		<dict>
 			<key>xpos</key>
-			<integer>700</integer>
+			<integer>1045</integer>
 			<key>ypos</key>
-			<integer>260</integer>
+			<integer>440</integer>
 		</dict>
-		<key>DE29432D-5DE2-49DE-A62C-41023AB386EA</key>
+		<key>BC02C346-0966-4391-AEF6-D8530291EA60</key>
 		<dict>
 			<key>xpos</key>
-			<integer>130</integer>
+			<integer>640</integer>
 			<key>ypos</key>
-			<integer>70</integer>
+			<integer>275</integer>
+		</dict>
+		<key>F3DA6D14-4D3E-4E9E-9EDD-E57B2CB10F87</key>
+		<dict>
+			<key>xpos</key>
+			<integer>770</integer>
+			<key>ypos</key>
+			<integer>345</integer>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>1.1.0</string>
+	<string>1.2.0</string>
 	<key>webaddress</key>
-	<string>https://frd.mn</string>
+	<string>https://github.com/frdmn/alfred-imgur#readme</string>
 </dict>
 </plist>
