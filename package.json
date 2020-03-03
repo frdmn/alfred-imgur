@@ -29,6 +29,7 @@
   ],
   "dependencies": {
     "alfy": "^0.6.0",
+    "clipboardy": "^2.2.0",
     "dotenv": "^8.2.0",
     "imgur": "^0.3.1"
   },
